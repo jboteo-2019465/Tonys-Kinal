@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b34daa3e-508c-496f-b59d-bdf8bf554e51">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="63"/>
+	<queryString>
+		<![CDATA[call sp_ListarEmpresas();]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="25" width="100" height="34" uuid="7dd30ed4-359e-4295-b95b-464372cf8f34"/>
+				<textElement textAlignment="Center">
+					<font fontName="Franklin Gothic Demi" size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte]]></text>
+			</staticText>
+			<image>
+				<reportElement x="175" y="10" width="71" height="59" uuid="7da57e9c-c6c5-48ce-8895-4281b3a5b2a7"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\report.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="139" splitType="Stretch">
+			<image>
+				<reportElement x="156" y="10" width="322" height="117" uuid="f373c670-38dc-4579-9fd5-aa8e09fa0cae"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\a.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="2" width="100" height="20" uuid="639d4394-d2ed-4408-bebb-0306d2156ec2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Codigo Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="2" width="146" height="20" uuid="359df863-736d-48e5-be77-84b3d7cee186"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="2" width="100" height="20" uuid="32a39cc6-533e-4bde-bf67-8fb8ebec06f5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="2" width="74" height="20" uuid="510c2b7b-cdce-45f2-85b9-186445dcba3f"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="10" width="100" height="20" forecolor="#660000" uuid="49a42001-51f2-4455-aebc-826d28758d2e"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="11" width="158" height="20" uuid="60f5f069-e0d2-4a25-9318-e794078ffda5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="30" width="519" height="1" forecolor="#FFCC00" uuid="963db2c5-62d7-4f67-9c4e-45995af6e57e"/>
+			</line>
+			<textField>
+				<reportElement x="456" y="10" width="74" height="20" uuid="33a206dd-564f-42ba-9809-f34e3768f4b5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="10" width="89" height="20" uuid="a570d5c9-94fe-48ec-aaad-74347643dff3"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="116" height="110" uuid="e42b401b-8313-4077-ac2c-e1285b72fa8e"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\LogoTonysKinal2 - copia.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

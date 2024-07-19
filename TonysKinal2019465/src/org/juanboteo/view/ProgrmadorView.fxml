@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: #f8e7df;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.juanboteo.controller.ProgramadorController">
+   <children>
+      <BorderPane layoutX="-13.0" prefHeight="313.0" prefWidth="43.0" style="-fx-background-color: #c88b5c;" />
+      <BorderPane layoutX="580.0" prefHeight="313.0" prefWidth="28.0" style="-fx-background-color: #c88b5c;" />
+      <BorderPane layoutX="29.0" layoutY="288.0" prefHeight="25.0" prefWidth="557.0" style="-fx-background-color: #c88b5c;" />
+      <BorderPane layoutX="28.0" prefHeight="25.0" prefWidth="557.0" style="-fx-background-color: #c88b5c;" />
+      <Label layoutX="52.0" layoutY="58.0" text="Juan Carlos Boteo Granados">
+         <font>
+            <Font name="Franklin Gothic Demi" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="87.0" text="IN5AM">
+         <font>
+            <Font name="Franklin Gothic Demi" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="114.0" text="Carnét: 2019465">
+         <font>
+            <Font name="Franklin Gothic Demi" size="15.0" />
+         </font>
+      </Label>
+      <Separator layoutX="303.0" layoutY="32.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #fae20a;" />
+      <Label layoutX="52.0" layoutY="146.0" text="jboteo-2019465@kinal.edu.gt">
+         <font>
+            <Font name="Franklin Gothic Demi" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="249.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/6400258.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="172.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/KinalLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="211.0" fitWidth="121.0" layoutX="389.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Programador.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="35.0" layoutX="40.0" layoutY="232.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/regresar%20(2).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

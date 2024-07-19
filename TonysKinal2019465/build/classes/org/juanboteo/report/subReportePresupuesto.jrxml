@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subReportePresupuesto" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="157b0231-9667-4174-b863-1a4e46f1b1a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from Empresas E  inner join Presupuestos P on
+	E.codigoEmpresa = P.codigoEmpresa  where E.codigoEmpresa = $P{codEmpresa} group by P.cantidadPresupuesto;]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoPresupuesto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaSolicitud" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPresupuesto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="22">
+			<staticText>
+				<reportElement x="59" y="2" width="126" height="20" uuid="dcbf1321-c99f-45d8-8f9f-836b56dd9a08"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Solicitud]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="2" width="147" height="20" uuid="9b6ee7cc-8643-4ecb-b6a9-cd5612217a33"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad Presupuesto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="81" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="59" y="18" width="100" height="20" uuid="fd0ade5f-440c-4332-8a60-4c7590c2e4de"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaSolicitud}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="311" y="18" width="147" height="20" uuid="ca44e81d-03e6-45cb-8b60-4b9fce9706cd"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadPresupuesto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="34" y="0" width="482" height="1" forecolor="#FFCC00" uuid="97ee55dc-6ffa-4bf4-b390-b0a8bee3f093"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

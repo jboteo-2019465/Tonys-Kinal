@@ -1,0 +1,329 @@
+.menu-bar {
+    -fx-background-color:  #f8e7df  ;
+    -fx-opacity: 0.5;
+    -fx-border-width: 2.0;
+
+}
+.menu-bar .label {
+    -fx-font-size: 14.0 pt;
+    -fx-font-family: "Bookman Old Style";
+    -fx-text-fill: black;
+    -fx-font-weight: bold; 
+    -fx-padding: 10.0px;
+
+}
+.menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+    -fx-background: #fac98f ;
+    -fx-opacity: 0.5;
+    -fx-text-fill: black;
+}
+
+.menu-item {
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+    -fx-text-fill: black;
+    -fx-background: #f8e7df ;
+}
+.menu-item .label{
+    -fx-font-size: 14.0 pt;
+    -fx-text-fill: black;
+}
+.menu-item .label:hover{
+    -fx-font-size: 14.0 pt;
+    -fx-background: black ;
+    -fx-text-fill: white;
+}
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color:#f8e7df ;
+    -fx-border-width: 0.2px;
+    -fx-border-color: black;
+    -fx-opacity: 0.5;
+    /** -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-background-radius: 0.0 6.0 6.0 6.0, 0.0 5.0 5.0 5.0, 0.0 4.0 4.0 4.0;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; 
+    -fx-opacity: 0.9;*/
+}
+
+.button1{
+    -fx-background-color:   #f8c78d ;
+    -fx-background-radius: 50 50 50 50
+    
+}
+.button1:hover{
+    -fx-background-color:    #c28c45;
+    -fx-background-radius: 100 50 100 50
+    
+}
+.button1:pressed{
+    -fx-background-color:    #e7b676; 
+    -fx-background-radius: 50 50 50 50
+    
+}
+
+.button2{
+    -fx-background-color:    #f5d93e ;
+    -fx-background-radius: 50 50 50 50
+    
+    
+    
+}
+.button2:hover{
+    -fx-background-color:    #c28c45;
+    -fx-background-radius: 100 50 100 50
+    
+    
+}
+.button2:pressed{
+    -fx-background-color:    #e7b676; 
+    -fx-background-radius: 50 50 50 50
+     
+    
+}
+
+.table-cell {     
+    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
+    -fx-border-color:    #f8c78d ;  
+    -fx-font: 13px "Segoe UI";    
+    -fx-border-insets: 0;
+}
+
+.table-cell:hover {
+    -fx-background-color:     #f8c78d   ;
+}
+
+ 
+.table-row-cell:empty, .table-cell:empty:hover {
+    -fx-background-color: whitesmoke;
+}
+ 
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+    -fx-background-color:   #f8c78d;
+}
+
+ 
+.table-view:row-selection .table-row-cell:filled:hover { 
+    -fx-background-color: white;
+}
+
+
+.table-view:row-selection .table-row-cell:filled:selected:hover { 
+    -fx-background-color: #c28c45 ;
+}
+
+
+.table-view:row-selection .table-row-cell:filled:selected { 
+    -fx-background-color:  #c28c45 ;
+}
+
+
+.table-view, .table-view:focused {
+  -fx-background-color:   #f8c78d ;
+  -fx-background-insets: -1.4, 0, 1;
+  -fx-background-radius: 1.4, 0, 0;
+}
+ 
+
+.table-view .column-header .label{
+    -fx-text-fill:   #50131e;
+    -fx-alignment: CENTER;
+}
+
+
+.table-view .column-header:hover {
+    -fx-background-color:   #f8c78d;
+}
+
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color:   #f8c78d;    
+    -fx-size: 45;
+    -fx-border-color: black;
+    -fx-border-width: 0 1 3 0;
+    -fx-border-insets: 0;
+}
+
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+
+.table-view .show-hide-columns-button {
+    -fx-background-color: white;
+    -fx-border-color: #7c586c;
+    -fx-border-insets: 0;
+}
+.table-row-cell:odd {
+    -fx-background-color: whitesmoke;
+}
+
+.futuristic-textfield {
+    -fx-background-color:  #f8c78d;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 20;
+    -fx-font-family: "Franklin Gothic Demi";
+    -fx-font-size: 11pt;
+ 
+}
+.futuristic-textfield:focused {
+    -fx-background-color: #f8c78d;
+    -fx-border-radius: 20;
+}
+
+
+.root
+{
+    /*-fx-base: dodgerblue; */
+}
+
+.datepicker-invalid
+{
+    -fx-border-color:  #581823;
+}
+
+.datepicker-valid
+{
+    -fx-border-color: null;
+}
+
+/* The main calendar pane */
+.calendar {
+
+}
+
+/* The calendar header, which contains the navigation elements. */
+.calendar-header
+{
+    -fx-background-color: #581823;
+    -fx-padding: 0.5em;
+   /* -fx-background-radius: 10;*/
+}
+
+/* The calendar footer, which contains the today button. It is only visible when the today button is shown */
+.calendar-footer
+{
+    -fx-background-color:  #581823;
+    -fx-padding: 0.2em;
+}
+
+/* The 3 different panes, which show the month, the year, and the decades */
+.calendar-month-view, .calendar-year-view, .calendar-decades-view
+{
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-base,80%), derive(-fx-base,40%));
+    -fx-padding: 0;
+}
+
+/* The usual button which either display the day of the current month, or the month in the year view, or the year in the decades view */
+.calendar-cell-current-month, .calendar-year-button, .calendar-month-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+/* The hover state of the buttons */
+.calendar-cell-current-month:hover, .calendar-year-button:hover, .calendar-month-button:hover {
+    -fx-background-color: -fx-cell-hover-color;
+}
+
+/* The day buttons for the previous and next month. */
+.calendar-cell-other-month {
+    -fx-background-color:   #e2ab75;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-background-radius: 8;
+}
+
+/* The hover state of this button. */
+.calendar-cell-other-month:hover {
+    -fx-background-color: -fx-cell-hover-color;
+}
+
+/* The button which shows the current day. */
+.calendar-cell-today {
+     -fx-background-color: -fx-accent;
+}
+
+/* The buttons in the header and the footer */
+.calendar-navigation-button, .calendar-navigation-title, .calendar-today-button {
+    -fx-background-color: null;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+/* don't make the title button transparent, when it is disabled in the decades view */
+.calendar-navigation-title:disabled {
+    -fx-opacity: 1;
+}
+
+/* The arrow for navigation. SVG is used for it. */
+.calendar-navigation-arrow {
+    /*padding determines the size of the arrow; This should match the design size in the SVG */
+    -fx-padding: 4 3.5 4 3.5;
+    -fx-padding: 0.333333em 0.333333em 0.333333em 0.333333em; /* 2 3.5 2 3.5 */
+    -fx-shape: "M 100 100 L 300 100 L 200 300 z";
+    -fx-background-color: #ffffff;
+}
+
+/* The cell which contain the week day names */
+.calendar-weekdays {
+    -fx-background-color: -fx-body-color;
+    -fx-padding: 3px;
+}
+
+.calendar-week-number {
+    -fx-font-size: 0.8em;
+    -fx-padding: 4px;
+}
+
+.combo-box-base {
+    -fx-background-color:  #f8c78d;
+    -fx-border-color:  #ffffff;
+    -fx-border-radius: 20;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 20;
+    -fx-text-fill:  #f8c78d;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+    
+}
+.combo-box-base .list-cell{
+        -fx-background-color:    #f8c78d ;
+        -fx-background-radius: 20;
+        -fx-border-radius: 20;
+        -fx-padding: 7;
+}
+.combo-box-base .list-view{
+        -fx-background-radius: 20;
+        -fx-border-radius: 20;
+        -fx-padding: 7;
+}
+
+.jfx-time-picker{
+    -fx-font-size: 14px;
+    -jfx-default-color:  #581823 ; 
+}
+.jfx-time-picker .jfx-time-picker-list .list-view .list-cell{
+    -fx-padding: 5px 10px;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+

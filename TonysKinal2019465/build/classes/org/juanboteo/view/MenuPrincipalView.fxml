@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.juanboteo.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="658.0" layoutX="-45.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/pngwing.com%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="446.0" fitWidth="387.0" layoutX="36.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/LogoTonysKinal2.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutX="10.0" prefHeight="44.0" prefWidth="438.0" stylesheets="@../resources/TonysKinal.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProducto" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo de Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo de Plato" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Módulos de Únion">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos_has_Platos" text="ProductosHasPlatos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosHasPlatos" text="ServicioHasPlato" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicios_has_Empleados" text="ServicioHasEmpleado" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="?">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="Programador" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

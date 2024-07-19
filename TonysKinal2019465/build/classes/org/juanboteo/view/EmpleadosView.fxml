@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="1387.0" style="-fx-background-color: #bcd0ca;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.juanboteo.controller.EmpleadosController">
+   <children>
+      <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="511.0" prefWidth="1350.0" style="-fx-background-color: #f8c78d;">
+         <children>
+            <Pane layoutX="1.0" layoutY="4.0" opacity="0.15" prefHeight="50.0" prefWidth="49.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #50131e;" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="11.0" layoutY="14.0" onMouseClicked="#ventanaTipoEmpleado" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/regresar%20(2).png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="1214.0" layoutY="361.0" prefHeight="148.0" prefWidth="136.0" style="-fx-background-color: #fbe404; -fx-background-radius: 50 50 0 0;">
+               <children>
+                  <ImageView fitHeight="276.0" fitWidth="259.0" layoutX="-61.0" layoutY="-41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/logodibujo-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="19.0" layoutY="-41.0" prefHeight="36.0" prefWidth="98.0" text="Empleados">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label alignment="CENTER" layoutX="836.0" layoutY="332.0" prefHeight="29.0" prefWidth="136.0" text="Empleados">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="15.0" />
+               </font>
+            </Label>
+            <VBox layoutX="11.0" layoutY="117.0" prefHeight="233.0" prefWidth="122.0">
+               <children>
+                  <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevo" prefHeight="63.0" prefWidth="122.0" styleClass="button1" stylesheets="@../resources/TonysKinal.css" text="Nuevo">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="57.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/foldergrey_93178.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="63.0" prefWidth="122.0" styleClass="button1" stylesheets="@../resources/TonysKinal.css" text="Eliminar">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="57.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="63.0" prefWidth="122.0" styleClass="button1" stylesheets="@../resources/TonysKinal.css" text="Editar">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="57.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReporte" mnemonicParsing="false" prefHeight="63.0" prefWidth="122.0" styleClass="button1" stylesheets="@../resources/TonysKinal.css" text="Reporte">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="40.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/reporte.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Separator layoutX="160.0" layoutY="115.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="14.0" layoutY="99.0" prefHeight="2.0" prefWidth="136.0" />
+            <GridPane layoutX="166.0" layoutY="14.0" prefHeight="90.0" prefWidth="229.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="151.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="78.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="16.0" prefWidth="130.0" text="Código Empleado">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCodigoEmpleado" prefHeight="33.0" prefWidth="109.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label prefHeight="18.0" prefWidth="148.0" text="Número de Empleado" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNumeroEmpleado" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="401.0" layoutY="14.0" prefHeight="90.0" prefWidth="322.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="164.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="152.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="18.0" prefWidth="160.0" text="Apellidos del Empleado">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="18.0" prefWidth="161.0" text="Nombres del Empleado" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtApellido" prefHeight="33.0" prefWidth="109.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtNombre" prefHeight="33.0" prefWidth="109.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="989.0" layoutY="9.0" prefHeight="90.0" prefWidth="349.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="74.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="18.0" prefWidth="160.0" text="Dirección">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="18.0" prefWidth="161.0" text="Teléfono" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDireccion" prefHeight="33.0" prefWidth="109.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtTelefono" prefHeight="33.0" prefWidth="109.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Label layoutX="729.0" layoutY="20.0" prefHeight="18.0" prefWidth="160.0" text="Código Tipo Empleado">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbCodigoTipoEmpleado" layoutX="880.0" layoutY="12.0" prefHeight="33.0" prefWidth="98.0" styleClass="combo-box-base" stylesheets="@../resources/TonysKinal.css" />
+            <Label layoutX="759.0" layoutY="72.0" prefHeight="16.0" prefWidth="130.0" text="Grado de Cocinero">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtGradoCocinero" layoutX="889.0" layoutY="66.0" prefHeight="30.0" prefWidth="74.0" styleClass="futuristic-textfield" stylesheets="@../resources/TonysKinal.css" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="19.0" layoutY="483.0" opacity="0.33" prefHeight="141.0" prefWidth="1207.0" style="-fx-background-color: #50131e; -fx-background-radius: 50 0 50 0;" />
+      <TableView fx:id="tblEmpleados" layoutX="185.0" layoutY="173.0" onMouseClicked="#seleccionarElemento" prefHeight="300.0" prefWidth="1043.0" styleClass="table-cell" stylesheets="@../resources/TonysKinal.css">
+         <columns>
+            <TableColumn fx:id="colCodigoEmpleado" editable="false" prefWidth="97.0" text="Cod.Empleado" />
+            <TableColumn fx:id="colApellidosEmpleado" editable="false" prefWidth="156.0" text="Apellidos" />
+            <TableColumn fx:id="colNombresEmpleado" editable="false" prefWidth="146.0" text="Nombres" />
+            <TableColumn fx:id="colDireccion" editable="false" prefWidth="162.0" text="Direccion" />
+            <TableColumn fx:id="colTelefono" editable="false" prefWidth="138.0" text="Telefono" />
+            <TableColumn fx:id="colNumeroEmpleado" editable="false" prefWidth="105.0" text="Num.Empleado" />
+            <TableColumn fx:id="colGradoCocinero" editable="false" prefWidth="100.0" text="Grad.Cocinero" />
+            <TableColumn fx:id="colCodigoTipoEmpleado" editable="false" prefWidth="130.0" text="Cod.TipoEmpleado" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

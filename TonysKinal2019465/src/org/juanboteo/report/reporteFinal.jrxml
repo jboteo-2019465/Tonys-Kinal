@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteFinal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20be6303-2732-45ea-81bc-f46687492c21">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="268"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select EM.codigoEmpresa, EM.nombreEmpresa, EM.direccion, EM.telefono, S.codigoServicio, S.tipoServicio, S.lugarServicio, S.horaServicio, SE.fechaEvento  , E.nombresEmpleado, E.apellidosEmpleado, TE.descripcion, P.nombrePlato, P.cantidadPlato, PRE.cantidadPresupuesto , PR.nombreProducto, PR.cantidad
+		from Empresas EM inner join Servicios S on EM.codigoEmpresa = S.codigoEmpresa
+			inner join servicios_has_empleados SE on  S.codigoServicio = SE.codigoServicio
+				 inner join Empleados E on SE.codigoEmpleado = E.codigoEmpleado
+					inner join TipoEmpleado TE on E.codigoTipoEmpleado = TE.codigoTipoEmpleado
+						 inner join servicios_has_platos SP on S.codigoServicio = SP.codigoServicio
+							 inner join Platos P on SP.codigoPlato = P.codigoPlato
+								 inner join productos_has_platos PP on P.codigoPlato = PP.codigoPlato
+									inner join Productos PR on PP.codigoProducto = PR.codigoProducto
+										inner join Presupuestos PRE on EM.codigoEmpresa = PRE.codigoEmpresa
+					where EM.codigoEmpresa = $P{codEmpresa};]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaEvento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPresupuesto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<image>
+				<reportElement x="129" y="19" width="71" height="59" uuid="99dd834e-bade-4ac2-8dda-043a1f867b3f"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\report.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="200" y="30" width="100" height="35" uuid="ddfc8e39-a3de-4c92-9b31-d98cd66bf467"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="30" width="100" height="35" uuid="5f9b4dd8-8906-4428-8d1c-9deb36a8b161"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="121" splitType="Stretch">
+			<image>
+				<reportElement x="141" y="0" width="308" height="117" uuid="cbc45cfb-9aac-49fb-92cc-18deb9e484fa"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\a.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="389" y="20" width="166" height="20" uuid="45511337-916a-48f2-9e25-ce0f06009d8f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="496" y="0" width="59" height="20" uuid="c8f50a76-5f0c-4b3b-921d-ae01ad3acc39"/>
+				<textElement textAlignment="Right">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Télefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="59" height="20" uuid="9bd942f0-b038-4ce4-94aa-1a24cd29179d"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="141" height="20" uuid="7189d1cb-9135-4668-b7bc-46509787dbd5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="107" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="106" uuid="39b49892-1c3f-4e99-b65d-4862cc1d2b0a"/>
+				<subreportParameter name="codEmpresa">
+					<subreportParameterExpression><![CDATA[$P{codEmpresa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subReportePresupuesto.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="296" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="105" height="20" uuid="a9ae7ac1-8375-4a2e-ac8b-69980fb21bc1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Empresa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="20" width="29" height="20" forecolor="#990000" uuid="e6f1fb23-c18b-4983-854f-4585a37678c1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="20" width="110" height="20" uuid="08755762-6e89-453e-9129-f036dcc62c43"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lugar del Servicio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="20" width="176" height="20" uuid="4847e481-750c-47ff-b4f7-0a7de6a408e8"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="62" width="56" height="20" uuid="e03d4743-02ef-48e1-bcaf-931d96fd3786"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="256" y="82" width="168" height="20" uuid="4176866c-5174-44de-947e-f505ddc4f6b4"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="125" width="44" height="20" uuid="e1e8e31f-2080-4d49-a387-71577cdc3dc7"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="182" width="33" height="20" uuid="1a116f40-971e-4dbb-8425-4740b3dfb384"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="300" y="182" width="100" height="20" uuid="5f9e40e2-99e5-43b0-b63a-b6182b1c328c"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="182" width="36" height="20" forecolor="#990000" uuid="896dd46c-93ec-4fe0-8339-cd873fff25b5"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="182" width="100" height="20" uuid="ae7c3cf6-2b9f-4fae-8954-200c03611e10"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Servicio]]></text>
+			</staticText>
+			<line>
+				<reportElement x="231" y="10" width="1" height="209" forecolor="#FFCC00" uuid="334b22bd-fc22-43de-9bdf-a7bb0f7923a6"/>
+			</line>
+			<staticText>
+				<reportElement x="105" y="20" width="12" height="20" forecolor="#990000" uuid="d2bb0534-62ce-4595-9b77-f5265d71573a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="182" width="12" height="20" forecolor="#990000" uuid="094393e3-c104-4e4e-b5fc-4cb6b984c59e"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="20" width="12" height="20" forecolor="#990000" uuid="28b8c3cb-2b9d-485f-9a0c-c84fdd15621c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="62" width="12" height="20" forecolor="#990000" uuid="521789a7-ed35-4ef9-8964-ad0d7be19f2c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="125" width="12" height="20" forecolor="#990000" uuid="6899d7ac-77c8-4a83-9936-0f194433611c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="182" width="12" height="20" forecolor="#990000" uuid="84048aba-d885-43de-9f27-7d679fa62149"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="256" y="145" width="100" height="20" uuid="8622322e-d336-469f-b97f-e2f4cc9fd4a3"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEvento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="145" width="100" height="20" uuid="57447bd9-1684-44f3-bc81-267f5ba45e94"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="125" width="141" height="20" uuid="86705bad-3ef9-466c-9f45-202f1aacff7c"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="125" width="12" height="20" forecolor="#990000" uuid="dd06349f-ceef-4fec-8f33-8a16eab15726"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="82" width="100" height="20" uuid="96dd7ae6-0f4a-461c-a19d-76488217c17a"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="56" height="20" uuid="a888e4bf-0af7-445a-8bf9-f7df7856c255"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="62" width="12" height="20" forecolor="#990000" uuid="81366061-c68f-4e05-b03b-f80561c8d7a0"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="247" width="226" height="20" uuid="a00342b0-284a-46df-b0d3-314aabfa323b"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="247" width="36" height="20" uuid="08fcd789-8dd5-4a37-9917-ca07ea9523a6"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="247" width="12" height="20" forecolor="#990000" uuid="1818dfef-0fe9-4aba-848e-821968aae22c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="267" width="203" height="20" uuid="09817440-2960-4dab-b693-0f7753339cc2"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="267" width="59" height="20" uuid="ecf241e9-f410-424f-aff2-a908b93ba867"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="412" y="247" width="100" height="20" uuid="48017fea-df55-41b6-9267-f5a2983ddfc8"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadPlato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="247" width="126" height="20" uuid="2ef5da56-5894-402c-9c8b-614e40dc469a"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Platos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="349" y="267" width="100" height="20" uuid="0a1c3a1c-e8d3-41ae-8094-5f992e10c921"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="267" width="66" height="20" uuid="5f01f83d-77ab-4281-949d-9cac56a6cd53"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="267" width="12" height="20" forecolor="#990000" uuid="44bfd505-4ef1-4f7b-abde-d89ab9df6d74"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="247" width="12" height="20" forecolor="#990000" uuid="1a92d3a5-c149-4c14-a204-f88eba512b3a"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="267" width="12" height="20" forecolor="#990000" uuid="d2326a6e-c917-4f8b-a60c-4ece56ff43c2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Franklin Gothic Demi" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="112" splitType="Stretch">
+			<image>
+				<reportElement x="439" y="0" width="116" height="110" uuid="93ffe726-f761-4386-ab47-889eb7c1a5a8"/>
+				<imageExpression><![CDATA["C:\\Users\\Boteo\\Documents\\NetBeansProjects\\TonysKinal2019465\\TonysKinal2019465\\src\\org\\juanboteo\\image\\LogoTonysKinal2 - copia.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
